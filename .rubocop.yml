@@ -1,0 +1,31 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - db/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - node_modules/**/*
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  CacheRootDirectory: tmp
+
+# Enforça sempre usar aspas duplas, evita ter que ficar pensando em qual situação usa simples ou dupla
+# já que dependendo da interpolação vai ter que usar aspas duplas e não tem diferença de performance
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Desabilita comentário 'frozen_string_literal: true' obrigatório em todos os arquivos
+# A ideia dessa cop era facilitar a migração para o Ruby 3, pois todas as strings seriam imutáveis por padrão apartir dessa versão
+# Porém a ideia foi abandonada, provavelmente essa cop vai ser desbilitada por padrão mais pra frente:
+# https://github.com/rubocop-hq/rubocop/issues/7197
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Desabilita documentação de classes obrigatória
+Style/Documentation:
+  Enabled: false
