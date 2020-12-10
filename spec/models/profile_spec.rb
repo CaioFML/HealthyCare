@@ -8,24 +8,26 @@ RSpec.describe Profile do
   end
 
   describe "birthday" do
+    subject(:profile) { described_class.new }
+
     it { is_expected.to validate_presence_of(:birthday) }
-    
+
     it "is valid with past birthday" do
-      subject.birthday = Date.today - 1
-      subject.valid?
-      expect(subject.errors.keys).to_not include :birthday
+      profile.birthday = Time.zone.today - 1
+      profile.valid?
+      expect(profile.errors.keys).not_to include :birthday
     end
-    
+
     it "is valid with current birthday" do
-      subject.birthday = Date.today
-      subject.valid?
-      expect(subject.errors.keys).to_not include :birthday
+      profile.birthday = Time.zone.today
+      profile.valid?
+      expect(profile.errors.keys).not_to include :birthday
     end
-    
+
     it "is invalid with future birthday" do
-      subject.birthday = Date.today + 1
-      subject.valid?
-      expect(subject.errors.keys).to include :birthday
+      profile.birthday = Time.zone.today + 1
+      profile.valid?
+      expect(profile.errors.keys).to include :birthday
     end
   end
 end
