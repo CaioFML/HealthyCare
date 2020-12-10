@@ -11,7 +11,7 @@ describe BirthdayValidator do
   subject(:validatable) { Validatable.new }
 
   context "when date is before current date" do
-    before { validatable.birthday = Time.zone.today - 1 }
+    before { validatable.birthday = 1.day.ago }
 
     it { is_expected.to be_valid }
   end
@@ -23,7 +23,7 @@ describe BirthdayValidator do
   end
 
   context "when date is greater than current date" do
-    before { validatable.birthday = Time.zone.today + 1 }
+    before { validatable.birthday = 1.day.from_now }
 
     it { is_expected.not_to be_valid }
 
