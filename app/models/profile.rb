@@ -1,11 +1,9 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  validates :name, presence: true
-  validates :cell_phone, presence: true
+  validates :name, :cell_phone, presence: true
   validates :birthday, presence: true, birthday: true
-  validates :weight, numericality: { greater_than: 0 }
-  validates :height, numericality: { greater_than: 0 }
+  validates :weight, :height, numericality: { greater_than: 0 }
 
   has_one_attached :photo
 end

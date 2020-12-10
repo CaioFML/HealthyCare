@@ -13,25 +13,19 @@ describe BirthdayValidator do
   context "when date is before current date" do
     before { validatable.birthday = Time.zone.today - 1 }
 
-    it "is valid" do
-      expect(validatable).to be_valid
-    end
+    it { is_expected.to be_valid }
   end
 
   context "when date is equal current date" do
     before { validatable.birthday = Time.zone.today }
 
-    it "is valid" do
-      expect(validatable).to be_valid
-    end
+    it { is_expected.to be_valid }
   end
 
   context "when date is greater than current date" do
     before { validatable.birthday = Time.zone.today + 1 }
 
-    it "is invalid" do
-      expect(validatable).not_to be_valid
-    end
+    it { is_expected.not_to be_valid }
 
     it "adds an error on model" do
       validatable.valid?
