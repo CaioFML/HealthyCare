@@ -1,6 +1,6 @@
 RSpec.describe Profile do
   describe "validations" do
-    subject (:profile) { build(:profile) }
+    subject(:profile) { build(:profile) }
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:cell_phone) }
