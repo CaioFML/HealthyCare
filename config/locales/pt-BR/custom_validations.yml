@@ -1,0 +1,5 @@
+pt-BR:  
+  activerecord:
+    errors:
+      messages:
+        birthday: "A data de nascimento não pode ser uma data futura"
