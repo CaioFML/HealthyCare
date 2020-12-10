@@ -1,0 +1,5 @@
+en:  
+  activerecord:
+    errors:
+      messages:
+        birthday: "the birthday cannot be a future date"
