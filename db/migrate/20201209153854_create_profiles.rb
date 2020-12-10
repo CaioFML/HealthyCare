@@ -9,7 +9,6 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.string :name
       t.date :birthday
       t.string :cell_phone
-      t.string :photo
 
       t.timestamps
     end
