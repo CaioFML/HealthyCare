@@ -3,10 +3,5 @@ class Exam < ApplicationRecord
 
   has_one_attached :files
 
-  validates :title, presence: true
-  validates :date, presence: true
-  validates :establishment, presence: true
-  validates :description, presence: true
-  validates :profile_id, presence: true
-
+  validates :title, :date, :establishment, :description, :profile_id,  presence: true
 end
