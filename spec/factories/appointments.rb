@@ -5,5 +5,6 @@ FactoryBot.define do
     specialty { "Clinico Geral" }
     complaints { Faker::Lorem.paragraph }
     diagnostics { Faker::Lorem.paragraph }
+    profile
   end
 end
