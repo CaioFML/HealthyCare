@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2020_12_10_024623) do
     t.string "name"
     t.date "birthday"
     t.string "cell_phone"
-    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
