@@ -1,4 +1,4 @@
-RSpec.describe Appointment, type: :model do
+RSpec.describe Appointment do
   describe "validations" do
     it { is_expected.to validate_presence_of(:professional) }
     it { is_expected.to validate_presence_of(:date_time) }
