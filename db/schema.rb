@@ -55,10 +55,8 @@ ActiveRecord::Schema.define(version: 2020_12_11_045123) do
     t.string "description"
     t.string "establishment"
     t.integer "type"
-    t.bigint "profile_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["profile_id"], name: "index_treatments_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
