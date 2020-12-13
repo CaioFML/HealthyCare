@@ -36,7 +36,7 @@ class SharesController < ApplicationController
     @share = Share.find(params[:id])
   end
 
-  def exams_params
+  def share_params
     params.require(:share).permit(:profile_shared, :status)
   end
 end
