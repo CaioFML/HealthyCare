@@ -36,7 +36,7 @@ class TreatmentsController < ApplicationController
     @treatment = Treatment.find(params[:id])
   end
 
-  def exams_params
+  def treatment_params
     params.require(:treatment).permit(:title, :establishment, :description, :type)
   end
 end
