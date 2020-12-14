@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_170556) do
+ActiveRecord::Schema.define(version: 2020_12_12_043140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 2020_12_10_170556) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id", null: false
     t.index ["profile_id"], name: "index_appointments_on_profile_id"
+
+  create_table "exams", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.string "establishment"
+    t.string "description"
+    t.integer "profile_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -70,6 +81,26 @@ ActiveRecord::Schema.define(version: 2020_12_10_170556) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "shares", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "profile_shared"
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_shares_on_profile_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "title"
+    t.string "description"
+    t.string "establishment"
+    t.integer "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_treatments_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,5 +118,8 @@ ActiveRecord::Schema.define(version: 2020_12_10_170556) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointment_details", "appointments"
   add_foreign_key "appointments", "profiles"
+  add_foreign_key "exams", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "shares", "profiles"
+  add_foreign_key "treatments", "profiles"
 end
