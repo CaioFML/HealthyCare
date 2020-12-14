@@ -36,6 +36,28 @@ ActiveRecord::Schema.define(version: 2020_12_11_045123) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "appointment_details", force: :cascade do |t|
+    t.bigint "appointment_id", null: false
+    t.string "detailable_type", null: false
+    t.bigint "detailable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_appointment_details_on_appointment_id"
+    t.index ["detailable_type", "detailable_id"], name: "index_appointment_details_on_detailable_type_and_detailable_id"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "professional"
+    t.datetime "date_time"
+    t.string "specialty"
+    t.text "complaints"
+    t.text "diagnostics"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "profile_id", null: false
+    t.index ["profile_id"], name: "index_appointments_on_profile_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "blood_type"
@@ -72,5 +94,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_045123) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointment_details", "appointments"
+  add_foreign_key "appointments", "profiles"
   add_foreign_key "profiles", "users"
 end
