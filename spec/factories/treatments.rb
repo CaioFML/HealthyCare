@@ -6,4 +6,3 @@ FactoryBot.define do
     type { Faker::String.random }
   end
 end
-

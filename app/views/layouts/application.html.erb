@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HealthyCare</title>
+    <title>Personal Health Control</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="icon" href="/landy/assets/logos/favicon.ico" type="image/png" sizes="16x16">
+    <!-- Bootstrap -->
+    <link href="/landy/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,700,600" rel="stylesheet" type="text/css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/landy/assets/css/animate.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="/landy/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/landy/assets/css/owl.theme.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="/landy/assets/css/magnific-popup.css">
+    <!-- Full Page Animation -->
+    <link rel="stylesheet" href="/landy/assets/css/animsition.min.css">
+    <!-- Ionic Icons -->
+    <link rel="stylesheet" href="/landy/assets/css/ionicons.min.css">
+    <!-- Main Style css -->
+    <link href="/landy/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
 
   <body>
     <%= yield %>
+    <script type="text/javascript" src="/landy/assets/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/landy/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/landy/assets/js/plugins.js"></script>
+    <script type="text/javascript" src="/landy/assets/js/menu.js"></script>
+    <script type="text/javascript" src="/landy/assets/js/custom.js"></script>
   </body>
 </html>
