@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_043140) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id", null: false
     t.index ["profile_id"], name: "index_appointments_on_profile_id"
+  end
 
   create_table "exams", force: :cascade do |t|
     t.string "title"
@@ -93,14 +94,12 @@ ActiveRecord::Schema.define(version: 2020_12_12_043140) do
   end
 
   create_table "treatments", force: :cascade do |t|
-    t.bigint "profile_id", null: false
     t.string "title"
     t.string "description"
     t.string "establishment"
     t.integer "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["profile_id"], name: "index_treatments_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -121,5 +120,4 @@ ActiveRecord::Schema.define(version: 2020_12_12_043140) do
   add_foreign_key "exams", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "shares", "profiles"
-  add_foreign_key "treatments", "profiles"
 end
