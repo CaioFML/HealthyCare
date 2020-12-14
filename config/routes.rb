@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "home/index"
+  get 'exams/index'
   devise_for :users
 
   root "home#index"
