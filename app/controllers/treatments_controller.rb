@@ -30,6 +30,15 @@ class TreatmentsController < ApplicationController
     end
   end
 
+  def destroy
+    if @treatment.destroy!
+      redirect_to treatments_path, notice: "#{@treatment.title} excluído com sucesso!"
+    else
+      flash.now[:alert] = @treatment.errors.full_messages.to_sentence
+      render :show
+    end
+  end
+
   private
 
   def set_treatments
