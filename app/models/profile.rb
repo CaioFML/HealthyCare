@@ -1,7 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  has_many :appointment
+  has_many :appointment, dependent: :destroy
 
   validates :name, :cell_phone, presence: true
   validates :birthday, presence: true, birthday: true
