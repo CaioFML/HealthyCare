@@ -1,0 +1,89 @@
+.btn-primary:hover, .wizard>.actions a:hover, .sweet-alert button.confirm:hover {
+    background-color: #0073AA;
+    border-color: #0073AA;
+}
+
+.btn-primary, .wizard>.actions a, .sweet-alert button.confirm {
+    background-color: #0073AA;
+    border-color: #0073AA;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all ease-in 0.3s;
+    transition: all ease-in 0.3s;
+}
+
+input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+input[type="search"]:disabled {
+    background: #dddddd;
+}
+
+input[type="email"]:disabled {
+    background: #dddddd;
+}
+
+select:disabled {
+    background: #dddddd;
+}
+
+.table-responsive-500 {
+    max-height: 500px;
+}
+
+.bg-c-red {
+    background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#fdfdfd));
+    background: linear-gradient(to right, #ffffff, #fdfdfd);
+}
+
+.lancaNota {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(48, 48, 48, 0.9);
+    z-index: 10;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+
+
+.j-pro input[type="text"], .j-pro input[type="datetime-local"], .j-pro input[type="password"], .j-pro input[type="email"], .j-pro input[type="search"], .j-pro input[type="url"], .j-pro textarea, .j-pro select, .j-forms input[type="text"], .j-forms input[type="password"], .j-forms input[type="email"], .j-forms input[type="search"], .j-forms input[type="url"], .j-forms textarea, .j-forms select {
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+.j-pro input[type="text"], .j-pro input[type="datetime-local"], .j-pro input[type="password"], .j-pro input[type="email"], .j-pro input[type="search"], .j-pro input[type="url"], .j-pro textarea, .j-pro select {
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.12);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: rgba(0,0,0,.87);
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    height: 48px;
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all.4s;
+    -moz-transition: all.4s;
+    -ms-transition: all.4s;
+    -o-transition: all.4s;
+    transition: all.4s;
+}
+
+.j-pro .j-icon-left ~ input, .j-pro .j-icon-left ~ textarea {
+    padding-left: 58px;
+}
