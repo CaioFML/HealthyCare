@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Personal Health Control</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+    <!-- Favicon icon -->
+    <link rel="icon" href="/landy/assets/logos/favicon.ico" type="image/png" sizes="16x16">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/admin/bower_components/bootstrap/css/bootstrap.min.css">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/icon/feather/css/feather.css">
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <!-- jpro forms css -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/j-pro/css/demo.css">
+    
+    <link rel="stylesheet" type="text/css" href="/admin/assets/pages/j-pro/css/j-pro-modern.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/css/custom.css">
+</head>
+
+<body>
+    <% if user_signed_in? %>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu"></i>
+                        </a>
+                        <a class="logo_right" href="/" style="margin-left:auto;">
+                            <img class="img-fluid" src="/landy/assets/logos/logoPHEC.png" width="100px" alt="Theme-Logo">
+                        </a>
+                        <a class="mobile-options">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <span>Personal Health Control</span>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
+                                        <i class="feather icon-message-square"></i>
+                                        <span id="alertPedido">
+                                            <span class="badge bg-c-green">0</span>
+                                            
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="user-profile header-notification">
+                                <div class="dropdown-primary dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">
+                                        
+                                        <span><%=current_user.email%></span>
+                                        <i class="feather icon-chevron-down"></i>
+                                    </div>
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                        
+                                        <li>
+                                            <a href="/users/sign_out" data-method="delete">
+                                                <i class="feather icon-log-out"></i> Sair
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="pcoded-navigatio-lavel"><b>Navegação</b></div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class="">
+                                        <a href="/">
+                                            <span class="pcoded-micon"><i class="fas fa-tachometer-alt"></i></span>
+                                            <span class="pcoded-mtext">Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">
+                                            <span class="pcoded-micon"><i class="fas fa-stethoscope"></i></span>
+                                            <span class="pcoded-mtext">Consultas</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">
+                                            <span class="pcoded-micon"><i class="fas fa-share-alt"></i></span>
+                                            <span class="pcoded-mtext">Compartilhamento</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/users/sign_out">
+                                            <span class="pcoded-micon"><i class="feather icon-log-out"></i></span>
+                                            <span class="pcoded-mtext">Sair</span>
+                                        </a>
+                                    </li>
+                                
+                                </ul>
+                            
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+                                        <div class="row">
+                                          <div class="col-xl-12 col-md-12">
+                                              
+                                              <%= yield %>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%else%>
+      <%=yield%>
+      
+    <%end%>
+
+    <div class="modal" id="dialog" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 id="title-modal" class="modal-title">Aviso</h3>
+					
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="modal_c">
+					<input type="hidden" id="modal_c_r">
+					<div class="row">
+						<div class="col-lx-12 col-md-12">
+							<h4 id="text_dialog"></h4>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="button-modal" type="button" class="btn" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Required Jquery -->
+    <!--<script data-cfasync="false" src="..\..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script>-->
+    <script type="text/javascript" src="/admin/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/admin/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="/admin/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="/admin/bower_components/modernizr/js/modernizr.js"></script>
+    <!-- Chart js -->
+    <script type="text/javascript" src="/admin/bower_components/chart.js/js/Chart.js"></script>
+    <!-- amchart js -->
+    <script src="/admin/assets/pages/widget/amchart/amcharts.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/serial.js"></script>
+    <script src="/admin/assets/pages/widget/amchart/light.js"></script>
+    <script src="/admin/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/admin/assets/js/SmoothScroll.js"></script>
+    <script src="/admin/assets/js/pcoded.min.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="/admin/assets/js/vartical-layout.min.js"></script>
+    <script type="text/javascript" src="/admin/assets/pages/dashboard/analytic-dashboard.min.js"></script>
+    
+    <script type="text/javascript" src="/admin/assets/js/script.min.js"></script>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+
+</script>
+
+
+</body>
+
+</html>

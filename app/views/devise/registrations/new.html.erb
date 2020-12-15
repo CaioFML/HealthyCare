@@ -1,0 +1,112 @@
+<div class="wrapper animsition" data-animsition-in-class="fade-in" data-animsition-in-duration="1000" data-animsition-out-class="fade-out" data-animsition-out-duration="1000">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+              <a class="navbar-brand page-scroll" href="#main"><img src="/landy/assets/logos/logoPHEC.png" alt="Personal Health Control Logo"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                  </ul>
+                  <ul class="navbar-nav my-2 my-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link page-scroll" href="/">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link page-scroll" href="/#services">Importante</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link page-scroll" href="/#features">Beneficios</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link page-scroll" href="/#reviews">Depoimentos</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link page-scroll" href="/#login">Acesso</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+  <div class="main" id="main">
+      <!-- Main Section-->
+      
+      <div class="flex-features" id="login">
+        <div class="container">
+            <div class="flex-split">
+                <div class="f-left wow fadeInUp" data-wow-delay="0s">
+                    <div class="left-content">
+                        <img class="img-fluid" src="/landy/assets/images/feature_bg.jpg" alt="">
+                    </div>
+                </div>
+                <div class="f-right wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="right-content">
+                        <h2>Novo cadastro</h2>
+                        <p class="notice"><%= notice %></p>
+                        <p class="alert"><%= alert %></p>
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <p>
+                                <div class="form">
+                                    <label for="login">e-mail</label>
+                                    <input type="email" id="login" name=user[email] class="form-control">
+                                </div>
+                            </p>
+                            <p>
+                                <div class="form">
+                                    <label for="senha">senha</label>
+                                    <input type="password" id="senha" name="user[password]" class="form-control">
+                                </div>
+                            </p>
+
+                            <p>
+                                <div class="form">
+                                    <label for="senha">senha</label>
+                                    <input type="password" id="password_confirmation" name="user[password_confirmation]" class="form-control">
+                                </div>
+                            </p>
+                        
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-12">
+                                    <input type="submit" class="btn btn-primary btn-action btn-fill" value="Cadastrar">
+                                </div>
+                                
+                            </div>
+                            
+                        <%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      
+      <!-- Footer Section -->
+      <div class="footer">
+          <div class="container">
+              <div class="col-md-12 text-center">
+                  <img src="/landy/assets/logos/logoPHEC.png" alt="Personal Health Control Logo">
+                  <ul class="footer-menu">
+                      <li><a href="http://demo.com">Site</a></li>
+                      <li><a href="#">Support</a></li>
+                      <li><a href="#">Terms</a></li>
+                      <li><a href="#">Privacy</a></li>
+                  </ul>
+                  <div class="footer-text">
+                      <p>
+                          Copyright © 2020 Personal Health Control. All Rights Reserved.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Scroll To Top -->
+      <a id="back-top" class="back-to-top page-scroll" href="#main">
+          <i class="ion-ios-arrow-thin-up"></i>
+      </a>
+      <!-- Scroll To Top Ends-->
+  </div>
+  <!-- Main Section -->
+</div>
+<!-- Wrapper-->
