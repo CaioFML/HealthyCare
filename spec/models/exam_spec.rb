@@ -6,6 +6,6 @@ RSpec.describe Exam do
     it { is_expected.to validate_presence_of(:description) }
     it { is_expected.to validate_presence_of(:profile_id) }
     it { is_expected.to belong_to :user }
-    it { is_expected.to have_many :appointment_detail }
+    it { is_expected.to have_many(:appointment_detail).dependent(:restrict_with_error) }
   end
 end
