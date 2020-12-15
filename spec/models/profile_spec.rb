@@ -6,6 +6,10 @@ RSpec.describe Profile do
     it { is_expected.to validate_numericality_of(:weight).is_greater_than(0) }
     it { is_expected.to validate_numericality_of(:height).is_greater_than(0) }
     it { is_expected.to belong_to :user }
+    it { is_expected.to have_many(:appointments).dependent(:restrict_with_error) }
+    it { is_expected.to have_many(:shares).dependent(:restrict_with_error) }
+    it { is_expected.to have_many(:exams).dependent(:restrict_with_error) }
+    it { is_expected.to have_many(:treatments).dependent(:restrict_with_error) }
   end
 
   describe "birthday" do

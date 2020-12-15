@@ -1,7 +1,9 @@
 class Profile < ApplicationRecord
   belongs_to :user
-
-  has_many :appointment, dependent: :destroy
+  has_many :appointments, dependent: :restrict_with_error
+  has_many :shares, dependent: :restrict_with_error
+  has_many :exams, dependent: :restrict_with_error
+  has_many :treatments, dependent: :restrict_with_error
 
   validates :name, :cell_phone, presence: true
   validates :birthday, presence: true, birthday: true
