@@ -30,6 +30,15 @@ class SharesController < ApplicationController
     end
   end
 
+  def destroy
+    if @share.destroy!
+      redirect_to shares_path, notice: "#{@share.title} excluído com sucesso!"
+    else
+      flash.now[:alert] = @share.errors.full_messages.to_sentence
+      render :show
+    end
+  end
+
   private
 
   def set_shares
