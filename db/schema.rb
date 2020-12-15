@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_043140) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "profile_id", null: false
     t.index ["profile_id"], name: "index_appointments_on_profile_id"
+  end
 
   create_table "exams", force: :cascade do |t|
     t.string "title"

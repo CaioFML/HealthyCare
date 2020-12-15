@@ -1,5 +1,5 @@
 class TreatmentsController < ApplicationController
-  before_action :set_treatments, only: %i[edit update destroy]
+  before_action :set_treatments, only: %i[edit update]
 
   def index
     @treatments = Treatment.all

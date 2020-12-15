@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :set_shares, only: %i[edit update destroy]
+  before_action :set_shares, only: %i[edit update]
 
   def index
     @shares = Share.all
